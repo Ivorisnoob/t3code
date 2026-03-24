@@ -1,0 +1,14 @@
+--- packages/shared/src/DrainableWorker.test.ts
++++ packages/shared/src/DrainableWorker.test.ts
+@@ -10,13 +10,13 @@
+         const firstStarted = yield* Deferred.make<void>();
+         const releaseFirst = yield* Deferred.make<void>();
+         const secondStarted = yield* Deferred.make<void>();
+         const releaseSecond = yield* Deferred.make<void>();
+
+         const worker = yield* makeDrainableWorker((item: string) =>
+           Effect.gen(function* () {
+             if (item === "first") {
+               yield* Deferred.succeed(firstStarted, undefined).pipe(Effect.orDie);
+               yield* Deferred.await(releaseFirst);
+             }
