@@ -5,6 +5,7 @@ import * as NodeServices from "@effect/platform-node/NodeServices";
 import { Data, Effect, FileSystem, Logger, Option, Path } from "effect";
 import { Command, Flag } from "effect/unstable/cli";
 import { ChildProcess, ChildProcessSpawner } from "effect/unstable/process";
+import { build as tsdownBuild } from "tsdown";
 
 import {
   DEVELOPMENT_ICON_OVERRIDES,
@@ -59,12 +60,12 @@ const applyPublishIconOverrides = Effect.fn("applyPublishIconOverrides")(functio
       });
     }
     if (!(yield* fs.exists(targetPath))) {
-      return yield* new CliError({
-        message: `Missing publish icon target: ${targetPath}. Run the build subcommand first.`,
-      });
+      yield* fs.makeDirectory(path.dirname(targetPath), { recursive: true });
     }
 
-    yield* fs.copyFile(targetPath, backupPath);
+    if (yield* fs.exists(targetPath)) {
+      yield* fs.copyFile(targetPath, backupPath);
+    }
     yield* fs.copyFile(sourcePath, targetPath);
     backups.push({ targetPath, backupPath });
   }
@@ -101,12 +102,8 @@ const applyDevelopmentIconOverrides = Effect.fn("applyDevelopmentIconOverrides")
         message: `Missing development icon source: ${sourcePath}`,
       });
     }
-    if (!(yield* fs.exists(targetPath))) {
-      return yield* new CliError({
-        message: `Missing development icon target: ${targetPath}. Build web first.`,
-      });
-    }
 
+    yield* fs.makeDirectory(path.dirname(targetPath), { recursive: true });
     yield* fs.copyFile(sourcePath, targetPath);
   }
 
@@ -130,20 +127,35 @@ const buildCmd = Command.make(
       const serverDir = path.join(repoRoot, "apps/server");
 
       yield* Effect.log("[cli] Running tsdown...");
-      yield* runCommand(
-        ChildProcess.make({
-          cwd: serverDir,
-          stdout: config.verbose ? "inherit" : "ignore",
-          stderr: "inherit",
-          // Windows needs shell mode to resolve .cmd shims (e.g. bun.cmd).
-          shell: process.platform === "win32",
-        })`bun tsdown`,
+      yield* Effect.tryPromise({
+        try: () =>
+          tsdownBuild({
+            cwd: serverDir,
+            logLevel: config.verbose ? "info" : "silent",
+          }),
+        catch: (cause) =>
+          new CliError({
+            message: "tsdown build failed",
+            cause,
+          }),
+      }).pipe(
+        Effect.mapError((cause) =>
+          cause instanceof CliError
+            ? cause
+            : new CliError({
+                message: "tsdown build failed",
+                cause,
+              }),
+        ),
       );
 
       const webDist = path.join(repoRoot, "apps/web/dist");
       const clientTarget = path.join(serverDir, "dist/client");
 
       if (yield* fs.exists(webDist)) {
+        yield* fs
+          .remove(clientTarget, { recursive: true, force: true })
+          .pipe(Effect.ignore({ log: true }));
         yield* fs.copy(webDist, clientTarget);
         yield* applyDevelopmentIconOverrides(repoRoot, serverDir);
         yield* Effect.log("[cli] Bundled web app into dist/client");

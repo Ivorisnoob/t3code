@@ -4,7 +4,7 @@
   "private": true,
   "main": "dist-electron/main.js",
   "scripts": {
-    "dev": "bun run --parallel dev:bundle dev:electron",
+    "dev": "concurrently \"bun run dev:bundle\" \"bun run dev:electron\"",
     "dev:bundle": "tsdown --watch",
     "dev:electron": "bun run scripts/dev-electron.mjs",
     "build": "tsdown",
@@ -22,6 +22,7 @@
     "@t3tools/contracts": "workspace:*",
     "@t3tools/shared": "workspace:*",
     "@types/node": "catalog:",
+    "concurrently": "^9.2.1",
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

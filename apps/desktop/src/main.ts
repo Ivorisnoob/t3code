@@ -100,7 +100,7 @@ const DESKTOP_SCHEME = "t3";
 const ROOT_DIR = Path.resolve(__dirname, "../../..");
 const isDevelopment = Boolean(process.env.VITE_DEV_SERVER_URL);
 const APP_DISPLAY_NAME = isDevelopment ? "T3 Code (Dev)" : "T3 Code (Alpha)";
-const APP_USER_MODEL_ID = "com.t3tools.t3code";
+const APP_USER_MODEL_ID = isDevelopment ? "com.t3tools.t3code.dev" : "com.t3tools.t3code";
 const LINUX_DESKTOP_ENTRY_NAME = isDevelopment ? "t3code-dev.desktop" : "t3code.desktop";
 const LINUX_WM_CLASS = isDevelopment ? "t3code-dev" : "t3code";
 const USER_DATA_DIR_NAME = isDevelopment ? "t3code-dev" : "t3code";
@@ -953,11 +953,26 @@ function revealWindow(window: BrowserWindow): void {
     window.show();
   }
 
+  if (process.platform === "win32") {
+    // Windows can leave a newly created dev window behind other apps even
+    // after show()/focus(), especially when Electron relaunches during watch.
+    window.setAlwaysOnTop(true, "screen-saver");
+    window.moveTop();
+  }
+
   if (process.platform === "darwin") {
     app.focus({ steal: true });
   }
 
   window.focus();
+
+  if (process.platform === "win32") {
+    setTimeout(() => {
+      if (!window.isDestroyed()) {
+        window.setAlwaysOnTop(false);
+      }
+    }, 250).unref();
+  }
 }
 
 function emitUpdateState(): void {
@@ -1654,7 +1669,7 @@ function createWindow(): BrowserWindow {
     height: 780,
     minWidth: 840,
     minHeight: 620,
-    show: isDevelopment,
+    show: false,
     autoHideMenuBar: true,
     backgroundColor: getInitialWindowBackgroundColor(),
     ...getIconOption(),
@@ -1720,19 +1735,24 @@ function createWindow(): BrowserWindow {
   window.webContents.on("did-finish-load", () => {
     window.setTitle(APP_DISPLAY_NAME);
     emitUpdateState();
+    revealWindow(window);
   });
-  if (!isDevelopment) {
-    window.once("ready-to-show", () => {
-      revealWindow(window);
-    });
-  }
+  window.webContents.on("did-fail-load", (_event, errorCode, errorDescription) => {
+    writeDesktopLogHeader(
+      `window did-fail-load errorCode=${String(errorCode)} description=${sanitizeLogValue(errorDescription)}`,
+    );
+    revealWindow(window);
+  });
+  window.once("ready-to-show", () => {
+    revealWindow(window);
+  });
 
   if (isDevelopment) {
     void window.loadURL(resolveDesktopDevServerUrl());
     window.webContents.openDevTools({ mode: "detach" });
-    setImmediate(() => {
+    setTimeout(() => {
       revealWindow(window);
-    });
+    }, 300).unref();
   } else {
     void window.loadURL(resolveDesktopWindowUrl());
   }
