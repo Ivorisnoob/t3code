@@ -1,0 +1,914 @@
+# Codebase Coverage Map
+
+The following is a file-by-file breakdown of the security audit coverage. Files without specific security implications or belonging to out-of-scope domains are marked appropriately.
+
+## Detailed File Status
+
+- ./.devcontainer/devcontainer.json: **partial** (General scan for obvious sinks)
+- ./.docs/architecture.md: **partial** (General scan for obvious sinks)
+- ./.docs/ci.md: **partial** (General scan for obvious sinks)
+- ./.docs/codex-prerequisites.md: **partial** (General scan for obvious sinks)
+- ./.docs/encyclopedia.md: **partial** (General scan for obvious sinks)
+- ./.docs/provider-architecture.md: **partial** (General scan for obvious sinks)
+- ./.docs/quick-start.md: **partial** (General scan for obvious sinks)
+- ./.docs/remote-architecture.md: **partial** (General scan for obvious sinks)
+- ./.docs/runtime-modes.md: **partial** (General scan for obvious sinks)
+- ./.docs/scripts.md: **partial** (General scan for obvious sinks)
+- ./.docs/workspace-layout.md: **partial** (General scan for obvious sinks)
+- ./.github/pull_request_template.md: **partial** (General scan for obvious sinks)
+- ./.oxfmtrc.json: **partial** (General scan for obvious sinks)
+- ./.oxlintrc.json: **partial** (General scan for obvious sinks)
+- ./.plans/01-shared-model-normalization.md: **partial** (General scan for obvious sinks)
+- ./.plans/02-typed-ipc-boundaries.md: **partial** (General scan for obvious sinks)
+- ./.plans/03-split-codex-app-server-manager.md: **partial** (General scan for obvious sinks)
+- ./.plans/04-split-chatview-component.md: **partial** (General scan for obvious sinks)
+- ./.plans/05-zod-persisted-state-validation.md: **partial** (General scan for obvious sinks)
+- ./.plans/06-provider-logstream-lifecycle.md: **partial** (General scan for obvious sinks)
+- ./.plans/07-ci-quality-gates.md: **partial** (General scan for obvious sinks)
+- ./.plans/08-precommit-format-and-lint.md: **partial** (General scan for obvious sinks)
+- ./.plans/09-event-state-test-expansion.md: **partial** (General scan for obvious sinks)
+- ./.plans/10-unify-process-session-abstraction.md: **partial** (General scan for obvious sinks)
+- ./.plans/11-effect.md: **partial** (General scan for obvious sinks)
+- ./.plans/12-effect-new.md: **partial** (General scan for obvious sinks)
+- ./.plans/13-provider-service-integration-tests.md: **partial** (General scan for obvious sinks)
+- ./.plans/14-server-authoritative-event-sourcing-cleanup.md: **partial** (General scan for obvious sinks)
+- ./.plans/15-effect-server.md: **partial** (General scan for obvious sinks)
+- ./.plans/16-pr89-review-remediation-phases.md: **partial** (General scan for obvious sinks)
+- ./.plans/16c-pr89-remediation-checklist.md: **partial** (General scan for obvious sinks)
+- ./.plans/17-claude-agent.md: **partial** (General scan for obvious sinks)
+- ./.plans/17-provider-neutral-runtime-determinism.md: **partial** (General scan for obvious sinks)
+- ./.plans/18-server-auth-model.md: **partial** (General scan for obvious sinks)
+- ./.plans/README.md: **partial** (General scan for obvious sinks)
+- ./.plans/branch-environment-picker-in-chatview-input.md: **partial** (General scan for obvious sinks)
+- ./.plans/effect-atom.md: **partial** (General scan for obvious sinks)
+- ./.plans/git-flows-integration-tests.md: **partial** (General scan for obvious sinks)
+- ./.plans/git-flows-test-plan.md: **partial** (General scan for obvious sinks)
+- ./.plans/git-integration-branch-picker-worktrees.md: **partial** (General scan for obvious sinks)
+- ./.plans/spec-1-1-cutover-plan.md: **partial** (General scan for obvious sinks)
+- ./.plans/spec-contract-matrix.md: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/11fcd02e5a3e41c7-manifest.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/11fcd02e5a3e41c7-meta.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/356df5a8493bd969-manifest.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/356df5a8493bd969-meta.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/edda65c6b5d0bc5b-manifest.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/edda65c6b5d0bc5b-meta.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/f58bbeb3707d6863-manifest.json: **partial** (General scan for obvious sinks)
+- ./.turbo/cache/f58bbeb3707d6863-meta.json: **partial** (General scan for obvious sinks)
+- ./.vscode/extensions.json: **partial** (General scan for obvious sinks)
+- ./.vscode/settings.json: **partial** (General scan for obvious sinks)
+- ./AGENTS.md: **partial** (General scan for obvious sinks)
+- ./CLAUDE.md: **partial** (General scan for obvious sinks)
+- ./CONTRIBUTING.md: **partial** (General scan for obvious sinks)
+- ./KEYBINDINGS.md: **partial** (General scan for obvious sinks)
+- ./README.md: **partial** (General scan for obvious sinks)
+- ./REMOTE.md: **partial** (General scan for obvious sinks)
+- ./SECURITY_AUDIT.md: **partial** (General scan for obvious sinks)
+- ./TODO.md: **partial** (General scan for obvious sinks)
+- ./apps/desktop/package.json: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/scripts/dev-electron.mjs: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/scripts/electron-launcher.mjs: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/scripts/smoke-test.mjs: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/scripts/start-electron.mjs: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/scripts/wait-for-resources.mjs: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/appBranding.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/appBranding.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendPort.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendPort.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendReadiness.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendReadiness.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendStartupReadiness.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/backendStartupReadiness.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/clientPersistence.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/clientPersistence.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/confirmDialog.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/confirmDialog.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/desktopSettings.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/desktopSettings.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/main.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/preload.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/rotatingFileSink.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/runtimeArch.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/runtimeArch.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/serverExposure.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/serverExposure.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/serverListeningDetector.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/serverListeningDetector.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/syncShellEnvironment.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/syncShellEnvironment.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateChannels.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateChannels.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateMachine.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateMachine.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateState.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/updateState.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/windowReveal.test.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/src/windowReveal.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/tsconfig.json: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/desktop/tsdown.config.ts: **partial** (Electron shell setup reviewed for basic configs)
+- ./apps/marketing/astro.config.mjs: **skipped** (Out of scope marketing site)
+- ./apps/marketing/package.json: **skipped** (Out of scope marketing site)
+- ./apps/marketing/src/layouts/Layout.astro: **skipped** (Out of scope marketing site)
+- ./apps/marketing/src/lib/releases.ts: **skipped** (Out of scope marketing site)
+- ./apps/marketing/src/pages/download.astro: **skipped** (Out of scope marketing site)
+- ./apps/marketing/src/pages/index.astro: **skipped** (Out of scope marketing site)
+- ./apps/marketing/tsconfig.json: **skipped** (Out of scope marketing site)
+- ./apps/server/integration/OrchestrationEngineHarness.integration.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/integration/TestProviderAdapter.integration.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/integration/fixtures/providerRuntime.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/integration/orchestrationEngine.integration.test.ts: **skipped** (Test file)
+- ./apps/server/integration/providerService.integration.test.ts: **skipped** (Test file)
+- ./apps/server/package.json: **partial** (General scan for obvious sinks)
+- ./apps/server/scripts/acp-mock-agent.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/scripts/cli.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/scripts/cursor-acp-model-mismatch-probe.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/atomicWrite.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/attachmentPaths.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/attachmentStore.test.ts: **skipped** (Test file)
+- ./apps/server/src/attachmentStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/auth/Layers/AuthControlPlane.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/AuthControlPlane.ts: **reviewed**
+- ./apps/server/src/auth/Layers/BootstrapCredentialService.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/BootstrapCredentialService.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerAuth.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerAuth.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerAuthPolicy.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerAuthPolicy.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerSecretStore.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/ServerSecretStore.ts: **reviewed**
+- ./apps/server/src/auth/Layers/SessionCredentialService.test.ts: **reviewed**
+- ./apps/server/src/auth/Layers/SessionCredentialService.ts: **reviewed**
+- ./apps/server/src/auth/Services/AuthControlPlane.ts: **reviewed**
+- ./apps/server/src/auth/Services/BootstrapCredentialService.ts: **reviewed**
+- ./apps/server/src/auth/Services/ServerAuth.ts: **reviewed**
+- ./apps/server/src/auth/Services/ServerAuthPolicy.ts: **reviewed**
+- ./apps/server/src/auth/Services/ServerSecretStore.ts: **reviewed**
+- ./apps/server/src/auth/Services/SessionCredentialService.ts: **reviewed**
+- ./apps/server/src/auth/http.ts: **reviewed**
+- ./apps/server/src/auth/utils.test.ts: **reviewed**
+- ./apps/server/src/auth/utils.ts: **reviewed**
+- ./apps/server/src/bin.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/bootstrap.test.ts: **skipped** (Test file)
+- ./apps/server/src/bootstrap.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Diffs.test.ts: **skipped** (Test file)
+- ./apps/server/src/checkpointing/Diffs.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Errors.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Layers/CheckpointDiffQuery.test.ts: **skipped** (Test file)
+- ./apps/server/src/checkpointing/Layers/CheckpointDiffQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Layers/CheckpointStore.test.ts: **skipped** (Test file)
+- ./apps/server/src/checkpointing/Layers/CheckpointStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Services/CheckpointDiffQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Services/CheckpointStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/checkpointing/Utils.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/cli-config.test.ts: **skipped** (Test file)
+- ./apps/server/src/cli.test.ts: **skipped** (Test file)
+- ./apps/server/src/cli.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/cliAuthFormat.test.ts: **skipped** (Test file)
+- ./apps/server/src/cliAuthFormat.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/config.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/environment/Layers/ServerEnvironment.test.ts: **skipped** (Test file)
+- ./apps/server/src/environment/Layers/ServerEnvironment.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/environment/Layers/ServerEnvironmentLabel.test.ts: **skipped** (Test file)
+- ./apps/server/src/environment/Layers/ServerEnvironmentLabel.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/environment/Services/ServerEnvironment.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/git/Layers/ClaudeTextGeneration.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/ClaudeTextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Layers/CodexTextGeneration.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/CodexTextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Layers/CursorTextGeneration.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/CursorTextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitCore.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitCore.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitHubCli.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitHubCli.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitManager.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitManager.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitStatusBroadcaster.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/GitStatusBroadcaster.ts: **reviewed**
+- ./apps/server/src/git/Layers/OpenCodeTextGeneration.test.ts: **reviewed**
+- ./apps/server/src/git/Layers/OpenCodeTextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Layers/RoutingTextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Prompts.test.ts: **reviewed**
+- ./apps/server/src/git/Prompts.ts: **reviewed**
+- ./apps/server/src/git/Services/GitCore.ts: **reviewed**
+- ./apps/server/src/git/Services/GitHubCli.ts: **reviewed**
+- ./apps/server/src/git/Services/GitManager.ts: **reviewed**
+- ./apps/server/src/git/Services/GitStatusBroadcaster.ts: **reviewed**
+- ./apps/server/src/git/Services/TextGeneration.ts: **reviewed**
+- ./apps/server/src/git/Utils.ts: **reviewed**
+- ./apps/server/src/git/githubPullRequests.ts: **reviewed**
+- ./apps/server/src/git/remoteRefs.ts: **reviewed**
+- ./apps/server/src/http.test.ts: **skipped** (Test file)
+- ./apps/server/src/http.ts: **reviewed**
+- ./apps/server/src/imageMime.test.ts: **skipped** (Test file)
+- ./apps/server/src/imageMime.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/keybindings.test.ts: **skipped** (Test file)
+- ./apps/server/src/keybindings.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/Attributes.test.ts: **skipped** (Test file)
+- ./apps/server/src/observability/Attributes.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/Layers/Observability.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/LocalFileTracer.test.ts: **skipped** (Test file)
+- ./apps/server/src/observability/LocalFileTracer.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/Metrics.test.ts: **skipped** (Test file)
+- ./apps/server/src/observability/Metrics.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/RpcInstrumentation.test.ts: **skipped** (Test file)
+- ./apps/server/src/observability/RpcInstrumentation.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/Services/BrowserTraceCollector.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/TraceRecord.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/observability/TraceSink.test.ts: **skipped** (Test file)
+- ./apps/server/src/observability/TraceSink.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/open.test.ts: **skipped** (Test file)
+- ./apps/server/src/open.ts: **reviewed**
+- ./apps/server/src/orchestration/Errors.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/CheckpointReactor.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/CheckpointReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/OrchestrationEngine.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/OrchestrationEngine.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/OrchestrationReactor.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/OrchestrationReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/ProjectionPipeline.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/ProjectionPipeline.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/ProjectionSnapshotQuery.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/ProjectionSnapshotQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/ProviderCommandReactor.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/ProviderCommandReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/ProviderRuntimeIngestion.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/ProviderRuntimeIngestion.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/RuntimeReceiptBus.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Layers/ThreadDeletionReactor.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/Layers/ThreadDeletionReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Normalizer.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Schemas.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/CheckpointReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/OrchestrationEngine.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/OrchestrationReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/ProjectionPipeline.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/ProjectionSnapshotQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/ProviderCommandReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/ProviderRuntimeIngestion.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/RuntimeReceiptBus.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/Services/ThreadDeletionReactor.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/commandInvariants.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/commandInvariants.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/decider.delete.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/decider.projectScripts.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/decider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/http.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/projector.test.ts: **skipped** (Test file)
+- ./apps/server/src/orchestration/projector.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/orchestration/runtimeLayer.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/os-jank.test.ts: **skipped** (Test file)
+- ./apps/server/src/os-jank.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/pathExpansion.test.ts: **skipped** (Test file)
+- ./apps/server/src/pathExpansion.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/persistence/Errors.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/AuthPairingLinks.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/AuthSessions.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/OrchestrationCommandReceipts.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/OrchestrationEventStore.test.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/OrchestrationEventStore.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionCheckpoints.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionPendingApprovals.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionProjects.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionRepositories.test.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionState.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreadActivities.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreadMessages.test.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreadMessages.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreadProposedPlans.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreadSessions.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionThreads.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProjectionTurns.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/ProviderSessionRuntime.ts: **reviewed**
+- ./apps/server/src/persistence/Layers/Sqlite.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/001_OrchestrationEvents.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/002_OrchestrationCommandReceipts.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/003_CheckpointDiffBlobs.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/004_ProviderSessionRuntime.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/005_Projections.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/006_ProjectionThreadSessionRuntimeModeColumns.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/007_ProjectionThreadMessageAttachments.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/008_ProjectionThreadActivitySequence.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/009_ProviderSessionRuntimeMode.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/010_ProjectionThreadsRuntimeMode.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/011_OrchestrationThreadCreatedRuntimeMode.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/012_ProjectionThreadsInteractionMode.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/013_ProjectionThreadProposedPlans.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/014_ProjectionThreadProposedPlanImplementation.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/015_ProjectionTurnsSourceProposedPlan.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/016_CanonicalizeModelSelections.test.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/016_CanonicalizeModelSelections.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/017_ProjectionThreadsArchivedAt.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/018_ProjectionThreadsArchivedAtIndex.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/019_ProjectionSnapshotLookupIndexes.test.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/019_ProjectionSnapshotLookupIndexes.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/020_AuthAccessManagement.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/021_AuthSessionClientMetadata.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/022_AuthSessionLastConnectedAt.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/023_ProjectionThreadShellSummary.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/024_BackfillProjectionThreadShellSummary.test.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/024_BackfillProjectionThreadShellSummary.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/025_CleanupInvalidProjectionPendingApprovals.test.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/025_CleanupInvalidProjectionPendingApprovals.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/026_CanonicalizeModelSelectionOptions.test.ts: **reviewed**
+- ./apps/server/src/persistence/Migrations/026_CanonicalizeModelSelectionOptions.ts: **reviewed**
+- ./apps/server/src/persistence/NodeSqliteClient.test.ts: **reviewed**
+- ./apps/server/src/persistence/NodeSqliteClient.ts: **reviewed**
+- ./apps/server/src/persistence/Services/AuthPairingLinks.ts: **reviewed**
+- ./apps/server/src/persistence/Services/AuthSessions.ts: **reviewed**
+- ./apps/server/src/persistence/Services/OrchestrationCommandReceipts.ts: **reviewed**
+- ./apps/server/src/persistence/Services/OrchestrationEventStore.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionCheckpoints.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionPendingApprovals.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionProjects.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionState.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionThreadActivities.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionThreadMessages.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionThreadProposedPlans.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionThreadSessions.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionThreads.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProjectionTurns.ts: **reviewed**
+- ./apps/server/src/persistence/Services/ProviderSessionRuntime.ts: **reviewed**
+- ./apps/server/src/processRunner.test.ts: **skipped** (Test file)
+- ./apps/server/src/processRunner.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Layers/ProjectFaviconResolver.test.ts: **skipped** (Test file)
+- ./apps/server/src/project/Layers/ProjectFaviconResolver.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Layers/ProjectSetupScriptRunner.test.ts: **skipped** (Test file)
+- ./apps/server/src/project/Layers/ProjectSetupScriptRunner.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Layers/RepositoryIdentityResolver.test.ts: **skipped** (Test file)
+- ./apps/server/src/project/Layers/RepositoryIdentityResolver.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Services/ProjectFaviconResolver.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Services/ProjectSetupScriptRunner.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/project/Services/RepositoryIdentityResolver.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/CodexDeveloperInstructions.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Errors.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ClaudeAdapter.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ClaudeAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ClaudeProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/CodexAdapter.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/CodexAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/CodexProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/CodexSessionRuntime.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/CodexSessionRuntime.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/CursorAdapter.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/CursorAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/CursorProvider.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/CursorProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/EventNdjsonLogger.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/EventNdjsonLogger.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/OpenCodeAdapter.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/OpenCodeAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/OpenCodeProvider.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/OpenCodeProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ProviderAdapterRegistry.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ProviderAdapterRegistry.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ProviderRegistry.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ProviderRegistry.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ProviderService.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ProviderService.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ProviderSessionDirectory.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ProviderSessionDirectory.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Layers/ProviderSessionReaper.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/Layers/ProviderSessionReaper.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ClaudeAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ClaudeProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/CodexAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/CodexProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/CursorAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/CursorProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/OpenCodeAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/OpenCodeProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderAdapter.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderAdapterRegistry.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderRegistry.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderService.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderSessionDirectory.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ProviderSessionReaper.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/Services/ServerProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/AcpAdapterSupport.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/AcpAdapterSupport.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/AcpCoreRuntimeEvents.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/AcpCoreRuntimeEvents.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/AcpJsonRpcConnection.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/AcpNativeLogging.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/AcpRuntimeModel.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/AcpRuntimeModel.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/AcpSessionRuntime.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/CursorAcpCliProbe.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/CursorAcpExtension.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/CursorAcpExtension.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/acp/CursorAcpSupport.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/acp/CursorAcpSupport.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/builtInProviderCatalog.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/cliVersion.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/cliVersion.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/makeManagedServerProvider.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/makeManagedServerProvider.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/opencodeRuntime.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/providerSnapshot.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/providerSnapshot.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/provider/providerStatusCache.test.ts: **skipped** (Test file)
+- ./apps/server/src/provider/providerStatusCache.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/server.test.ts: **skipped** (Test file)
+- ./apps/server/src/server.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/serverLifecycleEvents.test.ts: **skipped** (Test file)
+- ./apps/server/src/serverLifecycleEvents.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/serverLogger.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/serverRuntimeStartup.test.ts: **skipped** (Test file)
+- ./apps/server/src/serverRuntimeStartup.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/serverRuntimeState.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/serverSettings.test.ts: **skipped** (Test file)
+- ./apps/server/src/serverSettings.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/startupAccess.test.ts: **skipped** (Test file)
+- ./apps/server/src/startupAccess.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/telemetry/Identify.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/telemetry/Layers/AnalyticsService.test.ts: **skipped** (Test file)
+- ./apps/server/src/telemetry/Layers/AnalyticsService.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/telemetry/Services/AnalyticsService.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/terminal/Layers/BunPTY.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/terminal/Layers/Manager.test.ts: **skipped** (Test file)
+- ./apps/server/src/terminal/Layers/Manager.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/terminal/Layers/NodePTY.test.ts: **skipped** (Test file)
+- ./apps/server/src/terminal/Layers/NodePTY.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/terminal/Services/Manager.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/terminal/Services/PTY.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Layers/WorkspaceEntries.test.ts: **skipped** (Test file)
+- ./apps/server/src/workspace/Layers/WorkspaceEntries.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Layers/WorkspaceFileSystem.test.ts: **skipped** (Test file)
+- ./apps/server/src/workspace/Layers/WorkspaceFileSystem.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Layers/WorkspacePaths.test.ts: **skipped** (Test file)
+- ./apps/server/src/workspace/Layers/WorkspacePaths.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Services/WorkspaceEntries.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Services/WorkspaceFileSystem.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/workspace/Services/WorkspacePaths.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/src/ws.ts: **reviewed**
+- ./apps/server/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./apps/server/tsdown.config.ts: **partial** (General scan for obvious sinks)
+- ./apps/server/vitest.config.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/components.json: **partial** (General scan for obvious sinks)
+- ./apps/web/index.html: **partial** (General scan for obvious sinks)
+- ./apps/web/package.json: **partial** (General scan for obvious sinks)
+- ./apps/web/src/authBootstrap.test.ts: **skipped** (Test file)
+- ./apps/web/src/branding.test.ts: **skipped** (Test file)
+- ./apps/web/src/branding.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/clientPersistenceStorage.test.ts: **skipped** (Test file)
+- ./apps/web/src/clientPersistenceStorage.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/commandPaletteStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/components/AppSidebarLayout.tsx: **reviewed**
+- ./apps/web/src/components/BranchToolbar.logic.test.ts: **reviewed**
+- ./apps/web/src/components/BranchToolbar.logic.ts: **reviewed**
+- ./apps/web/src/components/BranchToolbar.tsx: **reviewed**
+- ./apps/web/src/components/BranchToolbarBranchSelector.tsx: **reviewed**
+- ./apps/web/src/components/BranchToolbarEnvModeSelector.tsx: **reviewed**
+- ./apps/web/src/components/BranchToolbarEnvironmentSelector.tsx: **reviewed**
+- ./apps/web/src/components/ChatMarkdown.browser.tsx: **reviewed**
+- ./apps/web/src/components/ChatMarkdown.tsx: **reviewed**
+- ./apps/web/src/components/ChatView.browser.tsx: **reviewed**
+- ./apps/web/src/components/ChatView.logic.test.ts: **reviewed**
+- ./apps/web/src/components/ChatView.logic.ts: **reviewed**
+- ./apps/web/src/components/ChatView.tsx: **reviewed**
+- ./apps/web/src/components/CommandPalette.logic.test.ts: **reviewed**
+- ./apps/web/src/components/CommandPalette.logic.ts: **reviewed**
+- ./apps/web/src/components/CommandPalette.tsx: **reviewed**
+- ./apps/web/src/components/CommandPaletteResults.tsx: **reviewed**
+- ./apps/web/src/components/ComposerPromptEditor.tsx: **reviewed**
+- ./apps/web/src/components/DiffPanel.tsx: **reviewed**
+- ./apps/web/src/components/DiffPanelShell.tsx: **reviewed**
+- ./apps/web/src/components/DiffWorkerPoolProvider.tsx: **reviewed**
+- ./apps/web/src/components/GitActionsControl.browser.tsx: **reviewed**
+- ./apps/web/src/components/GitActionsControl.logic.test.ts: **reviewed**
+- ./apps/web/src/components/GitActionsControl.logic.ts: **reviewed**
+- ./apps/web/src/components/GitActionsControl.tsx: **reviewed**
+- ./apps/web/src/components/Icons.tsx: **reviewed**
+- ./apps/web/src/components/KeybindingsToast.browser.tsx: **reviewed**
+- ./apps/web/src/components/NoActiveThreadState.tsx: **reviewed**
+- ./apps/web/src/components/PlanSidebar.tsx: **reviewed**
+- ./apps/web/src/components/ProjectFavicon.tsx: **reviewed**
+- ./apps/web/src/components/ProjectScriptsControl.tsx: **reviewed**
+- ./apps/web/src/components/PullRequestThreadDialog.tsx: **reviewed**
+- ./apps/web/src/components/RightPanelSheet.tsx: **reviewed**
+- ./apps/web/src/components/Sidebar.logic.test.ts: **reviewed**
+- ./apps/web/src/components/Sidebar.logic.ts: **reviewed**
+- ./apps/web/src/components/Sidebar.tsx: **reviewed**
+- ./apps/web/src/components/SplashScreen.tsx: **reviewed**
+- ./apps/web/src/components/ThreadStatusIndicators.tsx: **reviewed**
+- ./apps/web/src/components/ThreadTerminalDrawer.browser.tsx: **reviewed**
+- ./apps/web/src/components/ThreadTerminalDrawer.test.ts: **reviewed**
+- ./apps/web/src/components/ThreadTerminalDrawer.tsx: **reviewed**
+- ./apps/web/src/components/WebSocketConnectionSurface.logic.test.ts: **reviewed**
+- ./apps/web/src/components/WebSocketConnectionSurface.tsx: **reviewed**
+- ./apps/web/src/components/auth/PairingRouteSurface.tsx: **reviewed**
+- ./apps/web/src/components/chat/ChangedFilesTree.test.tsx: **reviewed**
+- ./apps/web/src/components/chat/ChangedFilesTree.tsx: **reviewed**
+- ./apps/web/src/components/chat/ChatComposer.tsx: **reviewed**
+- ./apps/web/src/components/chat/ChatHeader.tsx: **reviewed**
+- ./apps/web/src/components/chat/CompactComposerControlsMenu.browser.tsx: **reviewed**
+- ./apps/web/src/components/chat/CompactComposerControlsMenu.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerCommandMenu.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPendingApprovalActions.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPendingApprovalPanel.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPendingTerminalContexts.test.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPendingTerminalContexts.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPendingUserInputPanel.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPlanFollowUpBanner.tsx: **reviewed**
+- ./apps/web/src/components/chat/ComposerPrimaryActions.test.ts: **reviewed**
+- ./apps/web/src/components/chat/ComposerPrimaryActions.tsx: **reviewed**
+- ./apps/web/src/components/chat/ContextWindowMeter.tsx: **reviewed**
+- ./apps/web/src/components/chat/DiffStatLabel.tsx: **reviewed**
+- ./apps/web/src/components/chat/ExpandedImageDialog.tsx: **reviewed**
+- ./apps/web/src/components/chat/ExpandedImagePreview.tsx: **reviewed**
+- ./apps/web/src/components/chat/MessageCopyButton.tsx: **reviewed**
+- ./apps/web/src/components/chat/MessagesTimeline.browser.tsx: **reviewed**
+- ./apps/web/src/components/chat/MessagesTimeline.logic.test.ts: **reviewed**
+- ./apps/web/src/components/chat/MessagesTimeline.logic.ts: **reviewed**
+- ./apps/web/src/components/chat/MessagesTimeline.test.tsx: **reviewed**
+- ./apps/web/src/components/chat/MessagesTimeline.tsx: **reviewed**
+- ./apps/web/src/components/chat/ModelListRow.tsx: **reviewed**
+- ./apps/web/src/components/chat/ModelPickerContent.tsx: **reviewed**
+- ./apps/web/src/components/chat/ModelPickerSidebar.tsx: **reviewed**
+- ./apps/web/src/components/chat/OpenInPicker.tsx: **reviewed**
+- ./apps/web/src/components/chat/ProposedPlanCard.tsx: **reviewed**
+- ./apps/web/src/components/chat/ProviderModelPicker.browser.tsx: **reviewed**
+- ./apps/web/src/components/chat/ProviderModelPicker.tsx: **reviewed**
+- ./apps/web/src/components/chat/ProviderStatusBanner.tsx: **reviewed**
+- ./apps/web/src/components/chat/TerminalContextInlineChip.tsx: **reviewed**
+- ./apps/web/src/components/chat/ThreadErrorBanner.tsx: **reviewed**
+- ./apps/web/src/components/chat/TraitsPicker.tsx: **reviewed**
+- ./apps/web/src/components/chat/VscodeEntryIcon.tsx: **reviewed**
+- ./apps/web/src/components/chat/composerMenuHighlight.test.ts: **reviewed**
+- ./apps/web/src/components/chat/composerMenuHighlight.ts: **reviewed**
+- ./apps/web/src/components/chat/composerProviderState.test.tsx: **reviewed**
+- ./apps/web/src/components/chat/composerProviderState.tsx: **reviewed**
+- ./apps/web/src/components/chat/composerSlashCommandSearch.test.ts: **reviewed**
+- ./apps/web/src/components/chat/composerSlashCommandSearch.ts: **reviewed**
+- ./apps/web/src/components/chat/modelPickerModelHighlights.ts: **reviewed**
+- ./apps/web/src/components/chat/modelPickerSearch.test.ts: **reviewed**
+- ./apps/web/src/components/chat/modelPickerSearch.ts: **reviewed**
+- ./apps/web/src/components/chat/providerIconUtils.ts: **reviewed**
+- ./apps/web/src/components/chat/userMessageTerminalContexts.test.ts: **reviewed**
+- ./apps/web/src/components/chat/userMessageTerminalContexts.ts: **reviewed**
+- ./apps/web/src/components/composerFooterLayout.test.ts: **reviewed**
+- ./apps/web/src/components/composerFooterLayout.ts: **reviewed**
+- ./apps/web/src/components/composerInlineChip.ts: **reviewed**
+- ./apps/web/src/components/desktopUpdate.logic.test.ts: **reviewed**
+- ./apps/web/src/components/desktopUpdate.logic.ts: **reviewed**
+- ./apps/web/src/components/settings/ConnectionsSettings.tsx: **reviewed**
+- ./apps/web/src/components/settings/SettingsPanels.browser.tsx: **reviewed**
+- ./apps/web/src/components/settings/SettingsPanels.tsx: **reviewed**
+- ./apps/web/src/components/settings/SettingsSidebarNav.tsx: **reviewed**
+- ./apps/web/src/components/settings/settingsLayout.tsx: **reviewed**
+- ./apps/web/src/components/sidebar/SidebarUpdatePill.tsx: **reviewed**
+- ./apps/web/src/components/ui/alert-dialog.tsx: **reviewed**
+- ./apps/web/src/components/ui/alert.tsx: **reviewed**
+- ./apps/web/src/components/ui/autocomplete.tsx: **reviewed**
+- ./apps/web/src/components/ui/badge.tsx: **reviewed**
+- ./apps/web/src/components/ui/button.tsx: **reviewed**
+- ./apps/web/src/components/ui/card.tsx: **reviewed**
+- ./apps/web/src/components/ui/checkbox.tsx: **reviewed**
+- ./apps/web/src/components/ui/collapsible.tsx: **reviewed**
+- ./apps/web/src/components/ui/combobox.tsx: **reviewed**
+- ./apps/web/src/components/ui/command.tsx: **reviewed**
+- ./apps/web/src/components/ui/dialog.tsx: **reviewed**
+- ./apps/web/src/components/ui/empty.tsx: **reviewed**
+- ./apps/web/src/components/ui/field.tsx: **reviewed**
+- ./apps/web/src/components/ui/fieldset.tsx: **reviewed**
+- ./apps/web/src/components/ui/form.tsx: **reviewed**
+- ./apps/web/src/components/ui/group.tsx: **reviewed**
+- ./apps/web/src/components/ui/input-group.tsx: **reviewed**
+- ./apps/web/src/components/ui/input.tsx: **reviewed**
+- ./apps/web/src/components/ui/kbd.tsx: **reviewed**
+- ./apps/web/src/components/ui/label.tsx: **reviewed**
+- ./apps/web/src/components/ui/menu.tsx: **reviewed**
+- ./apps/web/src/components/ui/popover.tsx: **reviewed**
+- ./apps/web/src/components/ui/qr-code.test.tsx: **reviewed**
+- ./apps/web/src/components/ui/qr-code.tsx: **reviewed**
+- ./apps/web/src/components/ui/radio-group.tsx: **reviewed**
+- ./apps/web/src/components/ui/scroll-area.tsx: **reviewed**
+- ./apps/web/src/components/ui/select.tsx: **reviewed**
+- ./apps/web/src/components/ui/separator.tsx: **reviewed**
+- ./apps/web/src/components/ui/sheet.tsx: **reviewed**
+- ./apps/web/src/components/ui/sidebar.test.tsx: **reviewed**
+- ./apps/web/src/components/ui/sidebar.tsx: **reviewed**
+- ./apps/web/src/components/ui/skeleton.tsx: **reviewed**
+- ./apps/web/src/components/ui/spinner.tsx: **reviewed**
+- ./apps/web/src/components/ui/switch.tsx: **reviewed**
+- ./apps/web/src/components/ui/textarea.tsx: **reviewed**
+- ./apps/web/src/components/ui/toast.logic.test.ts: **reviewed**
+- ./apps/web/src/components/ui/toast.logic.ts: **reviewed**
+- ./apps/web/src/components/ui/toast.tsx: **reviewed**
+- ./apps/web/src/components/ui/toastHelpers.ts: **reviewed**
+- ./apps/web/src/components/ui/toggle-group.tsx: **reviewed**
+- ./apps/web/src/components/ui/toggle.tsx: **reviewed**
+- ./apps/web/src/components/ui/tooltip.tsx: **reviewed**
+- ./apps/web/src/composer-editor-mentions.test.ts: **skipped** (Test file)
+- ./apps/web/src/composer-editor-mentions.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/composer-logic.test.ts: **skipped** (Test file)
+- ./apps/web/src/composer-logic.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/composerDraftStore.test.ts: **skipped** (Test file)
+- ./apps/web/src/composerDraftStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/composerHandleContext.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/contextMenuFallback.test.ts: **skipped** (Test file)
+- ./apps/web/src/contextMenuFallback.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/diffRouteSearch.test.ts: **skipped** (Test file)
+- ./apps/web/src/diffRouteSearch.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/editorPreferences.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/env.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environmentApi.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environmentGrouping.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/primary/auth.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/primary/bootstrap.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/primary/context.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/primary/index.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/primary/target.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/remote/api.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/remote/api.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/remote/target.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/runtime/catalog.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/runtime/catalog.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/runtime/connection.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/runtime/connection.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/runtime/index.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/environments/runtime/service.addSavedEnvironment.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/runtime/service.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/runtime/service.threadSubscriptions.test.ts: **skipped** (Test file)
+- ./apps/web/src/environments/runtime/service.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/filePathDisplay.test.ts: **skipped** (Test file)
+- ./apps/web/src/filePathDisplay.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/historyBootstrap.test.ts: **skipped** (Test file)
+- ./apps/web/src/historyBootstrap.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useCopyToClipboard.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useHandleNewThread.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useLocalStorage.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useMediaQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useSettings.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useTheme.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useThreadActions.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/hooks/useTurnDiffSummaries.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/keybindings.test.ts: **skipped** (Test file)
+- ./apps/web/src/keybindings.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/chatThreadActions.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/chatThreadActions.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/contextWindow.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/contextWindow.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/desktopUpdateReactQuery.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/desktopUpdateReactQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/diffRendering.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/diffRendering.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/gitReactQuery.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/gitReactQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/gitStatusState.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/gitStatusState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/lruCache.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/lruCache.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/projectPaths.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/projectPaths.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/projectReactQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/projectScriptKeybindings.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/projectScriptKeybindings.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/providerReactQuery.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/providerReactQuery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/storage.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/terminalContext.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/terminalContext.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/terminalFocus.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/terminalFocus.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/terminalStateCleanup.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/terminalStateCleanup.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/threadSort.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/threadSort.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/turnDiffTree.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/turnDiffTree.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/utils.test.ts: **skipped** (Test file)
+- ./apps/web/src/lib/utils.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/lib/windowControlsOverlay.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/localApi.test.ts: **skipped** (Test file)
+- ./apps/web/src/localApi.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/logicalProject.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/main.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/markdown-links.test.ts: **skipped** (Test file)
+- ./apps/web/src/markdown-links.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/modelPickerOpenState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/modelSelection.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/observability/clientTracing.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/orchestrationEventEffects.test.ts: **skipped** (Test file)
+- ./apps/web/src/orchestrationEventEffects.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/orchestrationRecovery.test.ts: **skipped** (Test file)
+- ./apps/web/src/orchestrationRecovery.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/pairingUrl.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/pendingUserInput.test.ts: **skipped** (Test file)
+- ./apps/web/src/pendingUserInput.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/projectScripts.test.ts: **skipped** (Test file)
+- ./apps/web/src/projectScripts.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/proposedPlan.test.ts: **skipped** (Test file)
+- ./apps/web/src/proposedPlan.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/providerModels.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/providerSkillPresentation.test.ts: **skipped** (Test file)
+- ./apps/web/src/providerSkillPresentation.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/providerSkillSearch.test.ts: **skipped** (Test file)
+- ./apps/web/src/providerSkillSearch.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/pullRequestReference.test.ts: **skipped** (Test file)
+- ./apps/web/src/pullRequestReference.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rightPanelLayout.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routeTree.gen.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/router.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/__root.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/_chat.$environmentId.$threadId.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/_chat.draft.$draftId.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/_chat.index.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/_chat.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/pair.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/settings.archived.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/settings.connections.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/settings.general.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/routes/settings.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/atomRegistry.tsx: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/protocol.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/requestLatencyState.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/requestLatencyState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/serverState.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/serverState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/transportError.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/transportError.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/wsConnectionState.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/wsConnectionState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/wsRpcClient.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/wsRpcClient.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/rpc/wsTransport.test.ts: **skipped** (Test file)
+- ./apps/web/src/rpc/wsTransport.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/session-logic.test.ts: **skipped** (Test file)
+- ./apps/web/src/session-logic.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/shortcutModifierState.test.ts: **skipped** (Test file)
+- ./apps/web/src/shortcutModifierState.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/sidebarProjectGrouping.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/store.test.ts: **skipped** (Test file)
+- ./apps/web/src/store.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/storeSelectors.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/terminal-links.test.ts: **skipped** (Test file)
+- ./apps/web/src/terminal-links.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/terminalActivity.test.ts: **skipped** (Test file)
+- ./apps/web/src/terminalActivity.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/terminalStateStore.test.ts: **skipped** (Test file)
+- ./apps/web/src/terminalStateStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/threadDerivation.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/threadRoutes.test.ts: **skipped** (Test file)
+- ./apps/web/src/threadRoutes.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/threadSelectionStore.test.ts: **skipped** (Test file)
+- ./apps/web/src/threadSelectionStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/timestampFormat.test.ts: **skipped** (Test file)
+- ./apps/web/src/timestampFormat.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/types.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/uiStateStore.test.ts: **skipped** (Test file)
+- ./apps/web/src/uiStateStore.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/vite-env.d.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/vscode-icons-language-associations.json: **partial** (General scan for obvious sinks)
+- ./apps/web/src/vscode-icons-manifest.json: **partial** (General scan for obvious sinks)
+- ./apps/web/src/vscode-icons.test.ts: **skipped** (Test file)
+- ./apps/web/src/vscode-icons.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/src/worktreeCleanup.test.ts: **skipped** (Test file)
+- ./apps/web/src/worktreeCleanup.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/test/authHttpHandlers.ts: **skipped** (Test file)
+- ./apps/web/test/wsRpcHarness.ts: **skipped** (Test file)
+- ./apps/web/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./apps/web/vite.config.ts: **partial** (General scan for obvious sinks)
+- ./apps/web/vitest.browser.config.ts: **partial** (General scan for obvious sinks)
+- ./assets/dev/blueprint-icon-composer.icon/icon.json: **partial** (General scan for obvious sinks)
+- ./coverage.md: **partial** (General scan for obvious sinks)
+- ./data_flow.md: **partial** (General scan for obvious sinks)
+- ./dependencies.md: **partial** (General scan for obvious sinks)
+- ./docs/effect-fn-checklist.md: **partial** (General scan for obvious sinks)
+- ./docs/observability.md: **partial** (General scan for obvious sinks)
+- ./docs/release.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-001.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-002.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-003.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-004.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-005.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-006.md: **partial** (General scan for obvious sinks)
+- ./findings/SEC-007.md: **partial** (General scan for obvious sinks)
+- ./out_of_scope.md: **partial** (General scan for obvious sinks)
+- ./package.json: **partial** (General scan for obvious sinks)
+- ./packages/client-runtime/package.json: **partial** (General scan for obvious sinks)
+- ./packages/client-runtime/src/index.ts: **partial** (General scan for obvious sinks)
+- ./packages/client-runtime/src/knownEnvironment.test.ts: **skipped** (Test file)
+- ./packages/client-runtime/src/knownEnvironment.ts: **partial** (General scan for obvious sinks)
+- ./packages/client-runtime/src/scoped.ts: **partial** (General scan for obvious sinks)
+- ./packages/client-runtime/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./packages/contracts/package.json: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/auth.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/baseSchemas.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/editor.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/environment.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/filesystem.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/git.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/git.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/index.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/ipc.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/keybindings.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/keybindings.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/model.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/orchestration.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/orchestration.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/project.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/provider.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/provider.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/providerRuntime.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/providerRuntime.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/rpc.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/server.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/server.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/settings.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/src/terminal.test.ts: **skipped** (Test file)
+- ./packages/contracts/src/terminal.ts: **partial** (General scan for obvious sinks)
+- ./packages/contracts/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/package.json: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/scripts/generate.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/_generated/meta.gen.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/_generated/schema.gen.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/_internal/shared.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/_internal/stdio.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/agent.test.ts: **skipped** (Test file)
+- ./packages/effect-acp/src/agent.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/client.test.ts: **skipped** (Test file)
+- ./packages/effect-acp/src/client.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/errors.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/protocol.test.ts: **skipped** (Test file)
+- ./packages/effect-acp/src/protocol.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/rpc.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/schema.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/src/terminal.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-acp/test/examples/cursor-acp-client.example.ts: **skipped** (Test file)
+- ./packages/effect-acp/test/fixtures/acp-mock-peer.ts: **skipped** (Test file)
+- ./packages/effect-acp/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/package.json: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/scripts/generate.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/_generated/meta.gen.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/_generated/namespaces.gen.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/_generated/schema.gen.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/_internal/shared.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/_internal/stdio.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/client.test.ts: **skipped** (Test file)
+- ./packages/effect-codex-app-server/src/client.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/errors.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/protocol.test.ts: **skipped** (Test file)
+- ./packages/effect-codex-app-server/src/protocol.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/rpc.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/src/schema.ts: **partial** (General scan for obvious sinks)
+- ./packages/effect-codex-app-server/test/examples/codex-app-server-probe.ts: **skipped** (Test file)
+- ./packages/effect-codex-app-server/test/fixtures/codex-app-server-mock-peer.ts: **skipped** (Test file)
+- ./packages/effect-codex-app-server/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./packages/shared/package.json: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/DrainableWorker.test.ts: **skipped** (Test file)
+- ./packages/shared/src/DrainableWorker.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/KeyedCoalescingWorker.test.ts: **skipped** (Test file)
+- ./packages/shared/src/KeyedCoalescingWorker.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/Net.test.ts: **skipped** (Test file)
+- ./packages/shared/src/Net.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/String.test.ts: **skipped** (Test file)
+- ./packages/shared/src/String.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/Struct.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/cliArgs.test.ts: **skipped** (Test file)
+- ./packages/shared/src/cliArgs.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/git.test.ts: **skipped** (Test file)
+- ./packages/shared/src/git.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/logging.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/model.test.ts: **skipped** (Test file)
+- ./packages/shared/src/model.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/path.test.ts: **skipped** (Test file)
+- ./packages/shared/src/path.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/projectScripts.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/qrCode.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/schemaJson.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/searchRanking.test.ts: **skipped** (Test file)
+- ./packages/shared/src/searchRanking.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/serverSettings.test.ts: **skipped** (Test file)
+- ./packages/shared/src/serverSettings.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/shell.test.ts: **skipped** (Test file)
+- ./packages/shared/src/shell.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/src/toolActivity.test.ts: **skipped** (Test file)
+- ./packages/shared/src/toolActivity.ts: **partial** (General scan for obvious sinks)
+- ./packages/shared/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./scripts/build-desktop-artifact.test.ts: **skipped** (Test file)
+- ./scripts/build-desktop-artifact.ts: **partial** (General scan for obvious sinks)
+- ./scripts/dev-runner.test.ts: **skipped** (Test file)
+- ./scripts/dev-runner.ts: **partial** (General scan for obvious sinks)
+- ./scripts/lib/brand-assets.ts: **partial** (General scan for obvious sinks)
+- ./scripts/lib/build-target-arch.test.ts: **skipped** (Test file)
+- ./scripts/lib/build-target-arch.ts: **partial** (General scan for obvious sinks)
+- ./scripts/lib/resolve-catalog.ts: **partial** (General scan for obvious sinks)
+- ./scripts/lib/update-manifest.ts: **partial** (General scan for obvious sinks)
+- ./scripts/merge-update-manifests.test.ts: **skipped** (Test file)
+- ./scripts/merge-update-manifests.ts: **partial** (General scan for obvious sinks)
+- ./scripts/mock-update-server.test.ts: **skipped** (Test file)
+- ./scripts/mock-update-server.ts: **partial** (General scan for obvious sinks)
+- ./scripts/package.json: **partial** (General scan for obvious sinks)
+- ./scripts/release-smoke.ts: **partial** (General scan for obvious sinks)
+- ./scripts/resolve-nightly-release.test.ts: **skipped** (Test file)
+- ./scripts/resolve-nightly-release.ts: **partial** (General scan for obvious sinks)
+- ./scripts/resolve-previous-release-tag.ts: **partial** (General scan for obvious sinks)
+- ./scripts/sync-vscode-icons.mjs: **partial** (General scan for obvious sinks)
+- ./scripts/tsconfig.json: **partial** (General scan for obvious sinks)
+- ./scripts/update-release-package-versions.test.ts: **skipped** (Test file)
+- ./scripts/update-release-package-versions.ts: **partial** (General scan for obvious sinks)
+- ./tsconfig.base.json: **partial** (General scan for obvious sinks)
+- ./turbo.json: **partial** (General scan for obvious sinks)
+- ./vitest.config.ts: **partial** (General scan for obvious sinks)
